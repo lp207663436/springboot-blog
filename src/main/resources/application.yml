@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.96.137.194:3306/my_blog_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 962464
+  thymeleaf:
+    cache: false
+
+mybatis:
+  type-aliases-package: com.lp.blog.domain
+
+debug: false
