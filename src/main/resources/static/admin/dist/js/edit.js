@@ -75,7 +75,9 @@ $(function () {
                 $("#blogCoverImage").attr("style", "width: 128px;height: 128px;display:block;");
                 return false;
             } else {
-                alert("error");
+                console.log(r);
+                console.log(r.resultCode);
+                alert("error"+r+r.resultCode);
             }
         }
     });

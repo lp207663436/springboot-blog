@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="side-fragment" class="am-u-lg-4 am-u-sm-12 am-u-lg-offset-0 am-u-sm-offset-0 sidebar-container">
+
+<div th:fragment="side-fragment" style="color: black"
+     class="am-u-lg-4 am-u-sm-12 am-u-lg-offset-0 am-u-sm-offset-0 sidebar-container">
     <section>
+        <h3 class="widget-title">公告</h3>
+        <div class="widget">
+            <div class="bg-danger">
+                <div class="zhy-info">
+                    <i class="am-icon-quote-left" style="float: left"></i><br>
+                    <div class="zhy-info-day">
+                        <p>恰到好处的喜欢最舒服</p>
+                        <p>你不用多好</p>
+                        <p>我喜欢就好</p>
+                        <p>我没有很好</p>
+                        <p>你不嫌弃就好</p>
+                        <p style="text-align: right;padding-top: 10px">--- lp</p>
+                    </div>
+                    <i class="am-icon-quote-right" style="float: right"></i>
+                    <div class="zhy-info-opinion">
+                        <p><strong>Welcome to my blog！！！</strong></p>
+                        <p style="line-height: 25px">平淡对待一切<br>努力做最好的自己</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section>
             <div class="sidebar-header">
                 <span class="sidebar-header-title">
@@ -13,10 +36,29 @@
                     <div class="search-input">
                         <input type="text" name="keyword" id="searchbox" placeholder="输入关键字搜索">
                         <button type="submit" class="search-submit" onclick="search()"></button>
-                        <div>
+                    </div>
                 </form>
             </div>
         </section>
+
+        <div class="myStory" >
+            <div class="bg-myStory">
+                <div><a class="bg-myStory-a" href="/aboutme">我的故事</a></div>
+            </div>
+            <div class="myStory-words">一盆小花，一杯清茶</div>
+        </div>
+        <div class="myStory" >
+            <div class="bg-myGirl">
+                <div><a class="bg-myGirl-a" href="/mylove" target="_blank">我的女孩</a></div>
+            </div>
+            <div class="myStory-words">我的女孩，你还在吗</div>
+        </div>
+        <div class="myStory" >
+            <div class="bg-myHeart">
+                <div><a class="bg-myGirl-a" href="/blog/1" target="_blank">藏心阁</a></div>
+            </div>
+            <div class="myStory-words">曾经的我，写给未来的自己</div>
+        </div>
         <section>
             <div class="sidebar-header">
                 <span class="sidebar-header-title">

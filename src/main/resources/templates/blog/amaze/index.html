@@ -1,15 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="blog/amaze/header::head-fragment"></head>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="/blog/amaze/css/index.css">
+<link rel="stylesheet" href="/love/3d/css/roate.css">
+<link rel="shortcut icon" href="/favicon1.ico"/>
+<link rel="bookmark" href="/favicon1.ico"/>
+<script src="/admin/dist/js/plugins/jquery/jquery-1.12.4.min.js"></script>
+<script src="js/background.js" th:src="@{/js/background.js}"></script>
+
+<!--<link href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">-->
 <body id="blog">
+
+<audio style="display:none; height: 0" id="bg-music" preload="auto" th:src="@{/music/TheFlood.mp3}" loop="loop"></audio>
 <div th:replace="blog/amaze/header::nav-fragment"></div>
 <div th:replace="blog/amaze/header::header-fragment"></div>
-<div class="am-g am-g-fixed blog-fixed">
-    <div th:replace="blog/amaze/blog-list::blog-list-fragment"></div>
-    <div th:replace="blog/amaze/side::side-fragment"></div>
-</div>
-<footer th:replace="blog/amaze/footer::footer-fragment"></footer>
+<div>
+    <div class="wrap">
+
+        <div class="cube">
+            <!--前面图片 -->
+            <div class="out_front">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/bqQfVz5yrrGYSXMvKr.cqa9DenzRYCwwO35e.WHgRSfRlowkU0kUL6hr6e59Yz.oOGBgoh3M6V1VgdAU5paLl8K3AE9KuTcyWi4t4FB2sxI!/b&bo=PQLgAT0C4AEBCS4!&rf=viewer_4"
+                     class="pic">
+            </div>
+            <!--后面图片 -->
+            <div class="out_back">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEEwC.Wz9G5hbJby9r63vshm5pnPesGWZJDqk.41LySEqDDQz1yMgnMtSCgv10OCGnC9ippzLEtvBkVmH3jJQIk4!/b&bo=QAZVCPsGTgkBGZ8!&rf=viewer_4"
+                     class="pic">
+            </div>
+            <!--左面图片 -->
+            <div class="out_left">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrECPDAI5aSnjuf6Z*yJp3lwQ7oRyp.3kOajld9Mkb*zdf43*aZbKzQG9Vjge91*aS.ZmxaX9XV.EIRqurel2duy8!/b&bo=kAGQAZABkAEBGT4!&rf=viewer_4"
+                     class="pic">
+            </div>
+            <!--右面图片 -->
+            <div class="out_right">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEN*.U*QGWg3HP7hiWE.polXJ.JamAW2sKwIp1U8D6N3OVvjCtrINVt6MOptMdPa1RiHmythjN3qGE4hwvIU5eV0!/b&bo=eQL9AnkC*QIBGT4!&rf=viewer_4"
+                     class="pic">
+            </div>
+            <!--上面图片 -->
+            <div class="out_top">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEKCdSq*QegkJanU7LLw2VoZSOssVoCo7R2VPKUbhvW9o11ILLuRLDvhMNv7lJKT44uI.wyl80Zq0omFX6aac*dE!/b&bo=xAOnA8QDpwMBGT4!&rf=viewer_4"
+                     class="pic">
+            </div>
+            <!--下面图片 -->
+            <div class="out_bottom">
+                <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEG88ZeZzF9ehCXMt38kI4WoIxPsGOb2FcjUCGbgNasdgiq0xa4xS3ilppbnoluN2UtJtMi7OBFmtLyS0cZYKJN0!/b&bo=2wKtA9sCrQMBGT4!&rf=viewer_4"
+                     class="pic">
+            </div>
+
+            <!--小正方体 -->
+            <span class="in_front">
+                    <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/bqQfVz5yrrGYSXMvKr.cqa9DenzRYCwwO35e.WHgRSfRlowkU0kUL6hr6e59Yz.oOGBgoh3M6V1VgdAU5paLl8K3AE9KuTcyWi4t4FB2sxI!/b&bo=PQLgAT0C4AEBCS4!&rf=viewer_4"
+                         class="in_pic">
+                </span>
+            <span class="in_back">
+                     <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEEwC.Wz9G5hbJby9r63vshm5pnPesGWZJDqk.41LySEqDDQz1yMgnMtSCgv10OCGnC9ippzLEtvBkVmH3jJQIk4!/b&bo=QAZVCPsGTgkBGZ8!&rf=viewer_4"
+                          class="in_pic">
+                </span>
+            <span class="in_left">
+                    <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrECPDAI5aSnjuf6Z*yJp3lwQ7oRyp.3kOajld9Mkb*zdf43*aZbKzQG9Vjge91*aS.ZmxaX9XV.EIRqurel2duy8!/b&bo=kAGQAZABkAEBGT4!&rf=viewer_4"
+                         class="in_pic">
+                </span>
+            <span class="in_right">
+                    <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEN*.U*QGWg3HP7hiWE.polXJ.JamAW2sKwIp1U8D6N3OVvjCtrINVt6MOptMdPa1RiHmythjN3qGE4hwvIU5eV0!/b&bo=eQL9AnkC*QIBGT4!&rf=viewer_4"
+                         class="in_pic">
+                </span>
+            <span class="in_top">
+                    <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEKCdSq*QegkJanU7LLw2VoZSOssVoCo7R2VPKUbhvW9o11ILLuRLDvhMNv7lJKT44uI.wyl80Zq0omFX6aac*dE!/b&bo=xAOnA8QDpwMBGT4!&rf=viewer_4"
+                         class="in_pic">
+                </span>
+            <span class="in_bottom">
+                    <img src="http://m.qpic.cn/psc?/V12Zgitl3g3f1b/TmEUgtj9EK6.7V8ajmQrEG88ZeZzF9ehCXMt38kI4WoIxPsGOb2FcjUCGbgNasdgiq0xa4xS3ilppbnoluN2UtJtMi7OBFmtLyS0cZYKJN0!/b&bo=2wKtA9sCrQMBGT4!&rf=viewer_4"
+                         class="in_pic">
+                </span>
+
+        </div>
+    </div>
+    <div class="am-g am-g-fixed blog-fixed">
+        <div th:replace="blog/amaze/blog-list::blog-list-fragment"></div>
+        <div th:replace="blog/amaze/side::side-fragment"></div>
+    </div>
+    <footer th:replace="blog/amaze/footer::footer-fragment"></footer>
 </body>
 <script th:src="@{/blog/plugins/jquery/jquery.min.js}"></script>
 <script th:src="@{/blog/plugins/search/search.js}"></script>
+<script th:src="@{/music/autoPlay.js}"></script>
+
 </html>

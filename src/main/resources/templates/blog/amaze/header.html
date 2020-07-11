@@ -31,7 +31,7 @@
                     <a th:href="@{/link}">友链</a>
                 </li>
                 <li>
-                    <a th:href="@{/about}">关于</a>
+                    <a href="/aboutme">关于</a>
                 </li>
                 <li>
                     <a href="https://github.com/lp207663436">GitHub</a>
@@ -48,7 +48,7 @@
                         <a th:href="@{/link}">友链</a>
                     </li>
                     <li>
-                        <a th:href="@{/about}">关于</a>
+                        <a href="/aboutme">关于</a>
                     </li>
                     <li>
                         <a href="https://github.com/lp207663436">GitHub</a>
@@ -68,6 +68,7 @@
     </div>
     <!-- /.container -->
 </nav>
+
 <header th:fragment="header-fragment" class="intro-header"
         th:style="'background-image:url(' + @{/blog/amaze/images/header.jpg} + ');'">
     <div class="container">

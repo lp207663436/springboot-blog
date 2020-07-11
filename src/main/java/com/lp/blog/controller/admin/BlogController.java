@@ -193,7 +193,6 @@ public class BlogController {
         tempName.append(sdf.format(new Date())).append(r.nextInt(100)).append(suffixName);
         String newFileName = tempName.toString();
         //创建文件
-        File destFile = new File(Constants.FILE_UPLOAD_DIC + newFileName);
         String fileUrl = MyBlogUtils.getHost(new URI(request.getRequestURL() + "")) + "/upload/" + newFileName;
         File fileDirectory = new File(Constants.FILE_UPLOAD_DIC);
         try {
@@ -202,6 +201,8 @@ public class BlogController {
                     throw new IOException("文件夹创建失败,路径为：" + fileDirectory);
                 }
             }
+            File destFile = new File(fileDirectory.getAbsolutePath() +
+                    File.separator +  newFileName);
             file.transferTo(destFile);
             request.setCharacterEncoding("utf-8");
             response.setHeader("Content-Type", "text/html");

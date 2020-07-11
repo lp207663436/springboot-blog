@@ -5,6 +5,7 @@ import com.lp.blog.domain.BlogComment;
 import com.lp.blog.domain.BlogLink;
 import com.lp.blog.service.*;
 import com.lp.blog.utils.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * @author 13
@@ -22,10 +24,11 @@ import java.util.Map;
  * @link http://13blog.site
  */
 @Controller
+@Slf4j
 public class MyBlogController {
 
-    //public static String theme = "default";
-    //public static String theme = "yummy-jekyll";
+//    public static String theme = "default";
+//    public static String theme = "yummy-jekyll";
     public static String theme = "amaze";
     @Resource
     private BlogService blogService;
@@ -50,6 +53,17 @@ public class MyBlogController {
         return this.page(request, 1);
     }
 
+    @GetMapping("/mylove")
+    public String myLove(){
+//        log.info("success!");
+        return "blog/" + theme + "/mylove";
+    }
+
+    @GetMapping("/aboutme")
+    public String aboutme(){
+//        log.info("success!");
+        return "blog/" + theme + "/aboutme";
+    }
     /**
      * 首页 分页数据
      *
